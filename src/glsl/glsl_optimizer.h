@@ -2,6 +2,10 @@
 #ifndef GLSL_OPTIMIZER_H
 #define GLSL_OPTIMIZER_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /*
  Main GLSL optimizer interface.
  See ../../README.md for more instructions.
@@ -87,5 +91,7 @@ void glslopt_shader_get_texture_desc (glslopt_shader* shader, int index, const c
 // Number of math, texture and flow control instructions.
 void glslopt_shader_get_stats (glslopt_shader* shader, int* approxMath, int* approxTex, int* approxFlow);
 
-
+#ifdef __cplusplus
+} // extern "C"
+#endif
 #endif /* GLSL_OPTIMIZER_H */

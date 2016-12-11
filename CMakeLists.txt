@@ -8,12 +8,13 @@ include_directories(src)
 
 option (DEBUG "Enable debugging" FALSE)
 
+set(BUILD_SHARED_LIBS ON)
 if(${DEBUG} MATCHES "on")
 	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0")
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -g -O0")
 else()
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Os -DNDEBUG")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Os -DNDEBUG")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Os -DNDEBUG -fPIC")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Os -DNDEBUG -fPIC")
     set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -s")
 endif()
 
