@@ -6,6 +6,7 @@ include_directories(src/mapi)
 include_directories(src/glsl)
 include_directories(src)
 
+set(CMAKE_MACOSX_RPATH 1)
 option (DEBUG "Enable debugging" FALSE)
 
 set(BUILD_SHARED_LIBS ON)
