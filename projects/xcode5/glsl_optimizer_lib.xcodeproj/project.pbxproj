@@ -330,7 +330,7 @@
 		2BDCB95B184E182B0075CE6F /* ir_stats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ir_stats.cpp; path = ../../src/glsl/ir_stats.cpp; sourceTree = "<group>"; };
 		2BDCB95C184E182B0075CE6F /* ir_stats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ir_stats.h; path = ../../src/glsl/ir_stats.h; sourceTree = "<group>"; };
 		2BEC22CB1356E94E00B5E301 /* opt_copy_propagation_elements.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = opt_copy_propagation_elements.cpp; path = ../../src/glsl/opt_copy_propagation_elements.cpp; sourceTree = SOURCE_ROOT; };
-		D2AAC046055464E500DB518D /* libglsl_optimizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libglsl_optimizer.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC046055464E500DB518D /* libglsl_optimizer.dylib */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libglsl_optimizer.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -368,7 +368,7 @@
 		1AB674ADFE9D54B511CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC046055464E500DB518D /* libglsl_optimizer.a */,
+				D2AAC046055464E500DB518D /* libglsl_optimizer.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -651,7 +651,7 @@
 			);
 			name = glsl_optimizer;
 			productName = mesaglsl2;
-			productReference = D2AAC046055464E500DB518D /* libglsl_optimizer.a */;
+			productReference = D2AAC046055464E500DB518D /* libglsl_optimizer.dylib */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -800,12 +800,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_EXTENSION = dylib;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INSTALL_PATH = /usr/local/lib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = glsl_optimizer;
 			};
 			name = Debug;
@@ -814,10 +817,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_EXTENSION = dylib;
 				GCC_MODEL_TUNING = G5;
 				INSTALL_PATH = /usr/local/lib;
+				MACH_O_TYPE = mh_dylib;
 				PRODUCT_NAME = glsl_optimizer;
 			};
 			name = Release;
